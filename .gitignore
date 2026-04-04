@@ -55,3 +55,4 @@ venv/
 # Claude
 .claude/
 CLAUDE.md
+build/
