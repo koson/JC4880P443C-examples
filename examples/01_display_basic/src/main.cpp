@@ -107,14 +107,14 @@ extern "C" void app_main(void) {
     // Initialize display using BSP
     ESP_LOGI(TAG, "Initializing display...");
 
-    // Configure display with SPIRAM buffer
+    // Configure display - Full screen buffer (same as working project)
     bsp_display_cfg_t disp_cfg = {
         .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
-        .buffer_size = BSP_LCD_H_RES * 50,  // 50 lines buffer
-        .double_buffer = false,
+        .buffer_size = BSP_LCD_H_RES * BSP_LCD_V_RES,  // Full screen: 480 * 800
+        .double_buffer = false,  // Single buffer
         .flags = {
             .buff_dma = false,
-            .buff_spiram = true,  // Use PSRAM for buffer
+            .buff_spiram = true,  // Use PSRAM with XIP
             .sw_rotate = true,
         }
     };
