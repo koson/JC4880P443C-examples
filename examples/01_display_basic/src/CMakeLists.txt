@@ -7,5 +7,5 @@ idf_component_register(
         esp_timer
         driver
         esp_lcd
-        esp32_p4_function_ev_board
+        espressif__esp32_p4_function_ev_board
 )
